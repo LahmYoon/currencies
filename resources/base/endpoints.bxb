@@ -1,0 +1,21 @@
+endpoints {
+  authorization {
+    none
+  }
+
+  // action과 그에 맞는 자바스크립트를 매핑합니다.
+  action-endpoints {
+    action-endpoint (GetCurrencyInfo) {
+      accepted-inputs (value, dateTime, baseCurrency,targetCurrency, $vivContext)
+      local-endpoint (GetCurrencyInfo.js)
+    }
+    action-endpoint (GetBaseCurrency) {
+      accepted-inputs (currencySymbol)
+      local-endpoint (GetBaseCurrency.js)
+    }
+    action-endpoint (GetTargetCurrency) {
+      accepted-inputs (currencySymbol)
+      local-endpoint (GetTargetCurrency.js)
+    }
+  }
+}

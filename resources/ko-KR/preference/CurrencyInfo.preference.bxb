@@ -1,0 +1,12 @@
+// 유저가 선호하는 value를 선택할 수 있도록 합니다.
+preference-support {
+  match: CurrencyInfo (this)
+
+  bootstrap (currencySymbol) {
+    value (USD)
+    value (KRW)
+    value (EUR)
+    value (GBP)
+    value (JPY)
+  }
+}

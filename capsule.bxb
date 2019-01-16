@@ -1,0 +1,18 @@
+capsule {
+  id (example.currencies)
+  version (1.0.0)
+  format (3)
+  targets {
+    target (bixby-mobile-ko-KR)
+    target (bixby-mobile-en-US){enabled (false)}
+  }
+  
+  capsule-imports {
+    import (viv.entity) { version(3.10.0) as (entity) }
+    import (viv.core){ as (core) version-from (entity)}
+    import (viv.common) { as (common) version-from (entity)}
+    import (viv.geo) { as (geo) version-from (entity)}
+    import (viv.time){ as (time) version-from (entity)}
+    import (viv.money) {version (2.16.18) as (money)}
+  }
+}

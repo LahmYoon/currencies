@@ -1,0 +1,21 @@
+// // Ref(https://bixbydevelopers.com/dev/docs/dev-guide/developers/building-views.layout-macros)
+// // Ref(https://bixbydevelopers.com/dev/docs/reference/type/layout-macro-def.content)
+// layout-macro-def (currencyInfo_details) {
+//   params {
+//     param (info) {
+//       type (CurrencyInfo)
+//       min (Required) max (One)
+//     }
+//   }
+//   content {
+//     cell-area {
+//       slot2 {
+//           content {
+//             order (PrimarySecondary)
+//             primary ("[#{value(info.value)} #{value(info.currencySymbol)}]")
+//             secondary ("[국가: #{value(info.nation)}]")
+//           }
+//         }
+//      }
+//   }
+// }

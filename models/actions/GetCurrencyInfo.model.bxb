@@ -1,0 +1,57 @@
+action (GetCurrencyInfo) {
+  type(Search)
+  collect {
+    input (value) {
+      type (money.CurrencyValue) // 라이브러리 Money capsue의 concept을 사용하였습니다.
+      min (Optional) max (One)
+    }
+    
+    input (dateTime) {
+      type (time.DateTimeExpression) // 라이브러리 Time capsue의 concept을 사용하였습니다.
+      min (Optional) max (One)
+    }
+    
+    input (baseCurrency) {
+      type (BaseCurrency)
+      min (Optional) max (One)
+    }
+    
+    input (targetCurrency) {
+      type (TargetCurrency)
+      min (Optional) max (One)
+    }
+  }
+  
+  output (CurrencyInfo){
+    // 결과에 대한 예외처리를 합니다. 자바스크립트에서 던진 에러를 처리할 수 있습니다.
+    throws{
+      error (NoInfo){
+        on-catch {
+          halt {
+            dialog {
+              template-macro (ProblemDialog)
+            }
+          }
+        }
+      }
+      error (NoLocal){
+        on-catch {
+          halt {
+            dialog {
+              template-macro (NolocalDialog)
+            }
+          }
+        }
+      }
+      unknown-error{
+        on-catch {
+          halt {
+            dialog {
+              template-macro (ProblemDialog)
+            }
+          }
+        }
+      }
+    }
+  }
+}

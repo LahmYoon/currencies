@@ -1,0 +1,39 @@
+structure (CurrencyInfo) {
+  property (baseSymbol){
+    type (BaseCurrency)
+    min (Optional) max (One)
+  }
+  
+  property (currencySymbol){
+    type (CurrencySymbol)
+    min (Optional) max (One)
+  }
+  
+  property (nation) {
+    type (Nation)
+    min (Optional) max (One)
+  }
+  
+  property (baseValue) {
+    type (money.CurrencyValue)
+    min (Required) max (One)
+  }
+  
+  property (value) {
+    type (CurrencyValue)
+    min (Required) max (One)
+  }
+  
+  property (date) {
+    type (BaseDate)
+    min (Required) max (One)
+  }
+  
+  // preferences learning을 사용할 concept을 지정합니다. (https://bixbydevelopers.com/dev/docs/dev-guide/developers/learning.preference-learning)
+  // (https://bixbydevelopers.com/dev/docs/reference/type/structure.features)
+  features{
+    preferable{
+      preference (currencySymbol)
+    }
+  }
+}

@@ -1,0 +1,10 @@
+action (GetTargetCurrency) {
+  type(Constructor)
+  collect {
+    input (currencySymbol) {
+      type (CurrencySymbol)
+      min (Required) max (One)
+    }
+  }
+  output (TargetCurrency)
+}

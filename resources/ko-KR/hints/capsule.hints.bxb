@@ -1,0 +1,9 @@
+// 유저에게 capsule내에서 사용할 수 있는 발화에 대한 힌트를 제공합니다.
+hints {
+  hint-set (Things to try) {
+    utterance ("[g:CurrencyInfo] (10000)[v:money.CurrencyValue]{[g:BaseCurrency] (원화)[v:CurrencySymbol:KRW]}에 대한 환율 보여줘")
+    utterance ("[g:CurrencyInfo] (오늘)[v:time.DateTimeExpression] {[g:BaseCurrency] (유로)[v:CurrencySymbol:EUR]} 기준 환율 리스트 보여줘")
+    utterance ("[g:CurrencyInfo] (어제)[v:time.DateTimeExpression] 환율 어때?")
+    utterance ("[g:CurrencyInfo] {[g:BaseCurrency] (엔화)[v:CurrencySymbol:JPY]} 기준으로 {[g:TargetCurrency] (위안화)[v:CurrencySymbol:CNY]} 환율이 어때?")
+  }
+}

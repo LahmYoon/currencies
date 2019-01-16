@@ -1,0 +1,10 @@
+action (GetBaseCurrency) {
+  type(Constructor)
+  collect {
+    input (currencySymbol) {
+      type (CurrencySymbol)
+      min (Required) max (One)
+    }
+  }
+  output (BaseCurrency)
+}
