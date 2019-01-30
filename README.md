@@ -1,3 +1,5 @@
+# [Bixby capsule Example - KR]
+
 # 간단한 환전 예제 capsule 입니다.
 
 - 외부 API로부터 통화 정보를을 받아와 보여주고 preference learning 사용법을 알 수 있습니다.
